@@ -18,9 +18,9 @@ erikp8/DD2421-lab-1
 erikp8/DD2421-lab-2
 erikp8/DD2421-lab-3
 erikp8/DD2421-p-challange
-erikp8/IK2218-hw
+erikp8/IK2218-hw main
 erikp8/IoT-project
-erikp8/KEX-project
+erikp8/KEX-project main
 erikp8/ai-search
 erikp8/arpg
 erikp8/avalg-TSP
@@ -30,11 +30,13 @@ erikp8/disys-groupy
 erikp8/disys-loggy
 erikp8/disys-routy
 erikp8/disys-rudy
-erikp8/dtek-dab1
-erikp8/dtek-dab2
-erikp8/dtek-dab3
-erikp8/dtek-dab4
-erikp8/dtek-miniproj
+erikp8/dtek-dab1 jwaters
+erikp8/dtek-dab2 erikp8
+erikp8/dtek-dab3 erikp
+erikp8/dtek-dab3 extra
+erikp8/dtek-dab4 erik
+erikp8/dtek-miniproj master
+erikp8/dtek-miniproj not-fucked
 erikp8/hello-world
 erikp8/logik-dab1
 erikp8/logik-dab2
@@ -49,8 +51,6 @@ erikp8/pardis-lab1
 erikp8/pardis-lab2
 erikp8/pardis-lab3
 erikp8/personal-ml-library
-erikp8/personal-ml-library
-erikp8/projinda-chess
 erikp8/projinda-chess
 erikp8/sanstat-lab2
 erikp8/vettig-essay
@@ -89,6 +89,6 @@ progp21/jwaters-S2
 progp21/jwaters-S3
 progp21/jwaters-X1
 progp21/jwaters-X2
-simonqv/AI_HMM
-simonqv/AI_RL
-simonqv/AI_Search
+simonqv/AI_HMM main
+simonqv/AI_RL main
+simonqv/AI_Search main
