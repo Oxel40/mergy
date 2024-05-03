@@ -1,3 +1,8 @@
+git-filter-repo
+mono-repo/
+
+# Python stuff
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
