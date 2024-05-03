@@ -23,8 +23,8 @@ The repository list needs to be in the following format:
 Example:
 ```
 git@github.com:
-Oxel/mergy master
-Oxel/mergy testing
+Oxel40/mergy master
+Oxel40/mergy testing
 ```
 
 A longer example can be found in [repo.txt](./repos.txt).
