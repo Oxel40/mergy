@@ -1,0 +1,8 @@
+git@gits-15.sys.kth.se:
+erikp8/personal-ml-library
+erikp8/projinda-chess
+dd239-2022/exercises-erikp8 dos
+dd239-2022/exercises-erikp8 hash
+dd239-2022/exercises-erikp8 malware
+dd239-2022/exercises-erikp8 side-channel
+dd239-2022/exercises-erikp8 buffer-overflow
