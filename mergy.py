@@ -1,55 +1,84 @@
 import os
 import sys
 import shutil
+from tempfile import TemporaryDirectory
 import subprocess
 from os import path
+from urllib.request import urlretrieve
 
 
 OUTPUT_REPO = path.abspath("./mono-repo/")
-WIP_DIR_NAME = "wip-tmp"
-WIP_DIR = path.join(OUTPUT_REPO, WIP_DIR_NAME)
+GFR_PATH = path.abspath("./git-filter-repo")
+GFR_URL = "https://raw.githubusercontent.com/newren/git-filter-repo/main/git-filter-repo"
 
 
 def bootstrap_repo():
     while True:
         try:
             os.mkdir(OUTPUT_REPO)
-            os.mkdir(WIP_DIR)
-            run_cmd("git", "init")
+            run_repo_cmd("git", "init")
             break
         except FileExistsError:
             shutil.rmtree(OUTPUT_REPO)
 
 
-def unpack_repo():
-    contents = os.listdir(WIP_DIR)
-    for c in contents:
-        run_cmd("git", "mv", path.join(WIP_DIR, c), ".")
-    os.rmdir(WIP_DIR)
-    run_cmd("git", "commit", "-m", f"unpack tmp folder {WIP_DIR_NAME}")
-
-
-def run_cmd(*cmd):
+def run_repo_cmd(*cmd):
     subprocess.run(
         cmd,
         cwd=OUTPUT_REPO,
         check=True
     )
 
+def run_cmd(cwd, *cmd):
+    subprocess.run(
+        cmd,
+        cwd=cwd,
+        check=True
+    )
+
+def make_wip():
+    try:
+        os.mkdir(WIP_DIR)
+    except FileExistsError:
+        clear_wip()
+        os.mkdir(WIP_DIR)
+    run_wip_cmd("git", "init")
+
+def clear_wip():
+    shutil.rmtree(WIP_DIR)
+
 
 def merge_and_move(remote, name, branch):
-    run_cmd("git", "remote", "add", name, remote)
-    run_cmd("git", "fetch", name, "--tags")
-    run_cmd("git", "merge", "--allow-unrelated-histories", f"{name}/{branch}", "--no-edit")
-    run_cmd("git", "remote", "remove", name)
+    with TemporaryDirectory() as tmp_dir:
+        run_cmd(tmp_dir, "git", "init")
 
-    repo_subdir = path.join(WIP_DIR, name, branch)
-    os.makedirs(repo_subdir)
-    contents = os.listdir(OUTPUT_REPO)
-    contents = filter(lambda s: s != ".git" and s != WIP_DIR_NAME, contents)
-    for c in contents:
-        run_cmd("git", "mv", c, repo_subdir+"/")
-    run_cmd("git", "commit", "-m", f"move {name}/{branch} into tmp folder {WIP_DIR_NAME}")
+        run_cmd(tmp_dir, "git", "remote", "add", name, remote)
+        run_cmd(tmp_dir, "git", "fetch", name)
+        run_cmd(tmp_dir, "git", "merge", "--allow-unrelated-histories", f"{name}/{branch}", "--no-edit")
+        run_cmd(tmp_dir, "git", "remote", "remove", name)
+
+        repo_subdir = path.join(name, branch)
+        run_cmd(
+            tmp_dir,
+            sys.executable,
+            GFR_PATH,
+            "--to-subdirectory-filter",
+            f"{repo_subdir}/",
+            "--force"
+        )
+
+        run_repo_cmd("git", "remote", "add", "wip", tmp_dir)
+        run_repo_cmd("git", "fetch", "wip")
+        run_repo_cmd(
+            "git",
+            "merge",
+            "--allow-unrelated-histories",
+            "wip/master",
+            "--no-edit",
+            "-m",
+            f"restructured subtree merge in {name}/{branch}",
+        )
+        run_repo_cmd("git", "remote", "remove", "wip")
 
 
 def parse_file(file_path):
@@ -70,12 +99,15 @@ def parse_file(file_path):
 
 
 if __name__ == "__main__":
+    if not path.isfile(GFR_PATH):
+        urlretrieve(GFR_URL, GFR_PATH)
+
     repo_triplets = parse_file(sys.argv[1])
-    print("Will try to fetch:")
+    print("=== Repos ===")
     for _, name, branch in repo_triplets:
         print(name, branch)
 
     bootstrap_repo()
     for remote, name, branch in repo_triplets:
+        print("\n==>", name, branch)
         merge_and_move(remote, name, branch)
-    unpack_repo()
