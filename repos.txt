@@ -1,8 +1,94 @@
 git@gits-15.sys.kth.se:
-erikp8/personal-ml-library
-erikp8/projinda-chess
+DNSlab22/erikp8-simonqv-bind
+cprog22/erikp8-labbar
+dd239-2022/exercises-erikp8 buffer-overflow
 dd239-2022/exercises-erikp8 dos
 dd239-2022/exercises-erikp8 hash
 dd239-2022/exercises-erikp8 malware
 dd239-2022/exercises-erikp8 side-channel
-dd239-2022/exercises-erikp8 buffer-overflow
+dd2489-2023/team-erikp8-ludwigjo-theanot
+dd2489-2023/team-erikp8-ludwigjo-theanot sprint-4
+erikp8/DD2350-extralabb
+erikp8/DD2350-lab-1
+erikp8/DD2350-lab-2
+erikp8/DD2350-lab-3
+erikp8/DD2350-lab-4
+erikp8/DD2350-lab-5
+erikp8/DD2421-lab-1
+erikp8/DD2421-lab-2
+erikp8/DD2421-lab-3
+erikp8/DD2421-p-challange
+erikp8/IK2218-hw
+erikp8/IoT-project
+erikp8/KEX-project
+erikp8/ai-search
+erikp8/arpg
+erikp8/avalg-TSP
+erikp8/dbas
+erikp8/disys-cordy
+erikp8/disys-groupy
+erikp8/disys-loggy
+erikp8/disys-routy
+erikp8/disys-rudy
+erikp8/dtek-dab1
+erikp8/dtek-dab2
+erikp8/dtek-dab3
+erikp8/dtek-dab4
+erikp8/dtek-miniproj
+erikp8/hello-world
+erikp8/logik-dab1
+erikp8/logik-dab2
+erikp8/logik-dab3
+erikp8/mastertest-1
+erikp8/mastertest-2
+erikp8/numme-lab1
+erikp8/numme-lab2
+erikp8/numme-proj
+erikp8/pardis-exersices
+erikp8/pardis-lab1
+erikp8/pardis-lab2
+erikp8/pardis-lab3
+erikp8/personal-ml-library
+erikp8/personal-ml-library
+erikp8/projinda-chess
+erikp8/projinda-chess
+erikp8/sanstat-lab2
+erikp8/vettig-essay
+erikp8/vettig-hw
+gronland/Finance
+gronland/Finance RL_env
+gronland/Finance monitor
+inda-19/erikp8-palinda-1
+inda-19/erikp8-palinda-2
+inda-19/erikp8-palinda-3
+inda-19/erikp8-quicksort
+inda-19/erikp8-task-1
+inda-19/erikp8-task-10
+inda-19/erikp8-task-11
+inda-19/erikp8-task-12
+inda-19/erikp8-task-13
+inda-19/erikp8-task-14
+inda-19/erikp8-task-15
+inda-19/erikp8-task-16
+inda-19/erikp8-task-17
+inda-19/erikp8-task-18
+inda-19/erikp8-task-2
+inda-19/erikp8-task-3
+inda-19/erikp8-task-4
+inda-19/erikp8-task-5
+inda-19/erikp8-task-6
+inda-19/erikp8-task-7
+inda-19/erikp8-task-8
+inda-19/erikp8-task-9
+progp21/jwaters-F1
+progp21/jwaters-F2
+progp21/jwaters-F3
+progp21/jwaters-INET
+progp21/jwaters-S1
+progp21/jwaters-S2
+progp21/jwaters-S3
+progp21/jwaters-X1
+progp21/jwaters-X2
+simonqv/AI_HMM
+simonqv/AI_RL
+simonqv/AI_Search
