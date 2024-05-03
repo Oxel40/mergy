@@ -76,7 +76,7 @@ def merge_and_move(remote, name, branch):
             "wip/master",
             "--no-edit",
             "-m",
-            f"restructured subtree merge in {name}/{branch}",
+            f"merge subtree {name}/{branch} (restructured)",
         )
         run_repo_cmd("git", "remote", "remove", "wip")
 
